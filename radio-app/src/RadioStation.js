@@ -6,8 +6,8 @@ export const RadioBase = "http://feg-server.fritz.box:8000"
 export class RadioStation {
     constructor(name, language, url) {
         this.endpoint = name;
-        this.route = url;
         this.name = language;
+        this.route = url;
     }
 }
 
