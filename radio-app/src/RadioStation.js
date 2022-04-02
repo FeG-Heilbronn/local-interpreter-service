@@ -1,6 +1,9 @@
 import { reactive, readonly } from "vue";
 import { httpClient } from "./EasyHttps.js";
 
+const ProblematicMdnsName = "http://feg-server.local:8000"
+const hostMatcher = new RegExp(ProblematicMdnsName,"i");
+
 export const RadioBase = "http://feg-server.fritz.box:8000"
 
 export class RadioStation {
@@ -42,10 +45,14 @@ export const mutations = {
         // })
         // .catch((err) => console.warn("Failed to query radio-channels: " + err));
 
-        const generateStationName = function(station, info) {
-            if (info)
-                return `${station} : ${info}`;
-            return station;
+        const processDescriptor = (station) => {
+            let name = station.server_name;
+            if (station.title)
+                name = `${station.server_name} : ${station.title}`;
+
+            const url = station.listenurl.replace(hostMatcher, RadioBase);
+            const interpreter = new RadioStation(station.server_name, name, url);
+            mutations.appendStation(interpreter);
         }
 
         httpClient.get(RadioBase + "/status-json.xsl")
@@ -54,15 +61,9 @@ export const mutations = {
                     console.warn("Version 2.4.4 required may cause malfunction");
 
                 if (Array.isArray(data.icestats.source)) {
-                    data.icestats.source.forEach((station) => {
-                        const interpreter = new RadioStation(station.server_name, generateStationName(station.server_name, station.title), station.listenurl);
-                        mutations.appendStation(interpreter);
-                    });
-                }
-                else {
-                    const station = data.icestats.source;
-                    const interpreter = new RadioStation(station.server_name, generateStationName(station.server_name, station.title), station.listenurl);
-                    mutations.appendStation(interpreter);
+                    data.icestats.source.forEach((station) => processDescriptor(station));
+                } else {
+                    processDescriptor(data.icestats.source);
                 }
             })
             .catch((err) => console.warn("Failed to query radio-channels: " + err));

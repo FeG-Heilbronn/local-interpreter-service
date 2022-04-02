@@ -1,3 +1,4 @@
+const ProblematicMdnsName = "http://feg-server.local:8000"
 const RadioBase = "http://feg-server.fritz.box:8000"
 
 class EasyHttpClient {
@@ -23,15 +24,18 @@ const stationControl = (function () {
         <h3>Keine Station gefunden </h3>
         <h5>Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut</h5>
     </div>`;
-    function CreateStation(language, url) {
+    function CreateStation(id, language, url) {
+        id = id.replace(/\s+/gm,'');
         return `
         <div class="row player-controls">
-        <h3>${language}</h3>
-            <audio controls src="${url}" type="audio/mpeg">
-                Your browser does not support the <code>audio</code> element.
+            <h3>${language}</h3>
+            <audio id="${id}" controls="" preload="none" controlsList="nodownload">
+                <source src="${url}" type="audio/mpeg">
             </audio>
         </div>`;
     }
+
+    const hostMatcher = new RegExp(ProblematicMdnsName,"i");
 
     const stationsContainer = document.getElementById("stations");
 
@@ -39,12 +43,12 @@ const stationControl = (function () {
     function setUpView(stations) {
         stations.forEach((station) => {
             const child = document.createElement("div");
-            child.innerHTML = CreateStation(station.name, station.route);
+            child.innerHTML = CreateStation(station.endpoint, station.name, station.route);
             stationsContainer.appendChild(child)
         })
     }
 
-    function init() {
+    function init() {   
         let stations = [];
 
         const processDescriptor = (station) => {
@@ -52,7 +56,8 @@ const stationControl = (function () {
             if (station.title)
                 name = `${station.server_name} : ${station.title}`;
 
-            const interpreter = new RadioStation(station.server_name, name, station.listenurl);
+            const url = station.listenurl.replace(hostMatcher, RadioBase);
+            const interpreter = new RadioStation(station.server_name, name, url);
             stations.push(interpreter);
         }
 
