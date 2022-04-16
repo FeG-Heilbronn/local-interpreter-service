@@ -6,76 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
 </head>
 
 <body>
-    <div class="container" style="margin-top: 1cm;">
-        <div class="row">
-            <div class="three columns">
-                <img class="u-full-width" src="pictures/FeGLogo.svg">
+    <div class="mt-5 row d-flex justify-content-center">
+        <div class="col-2">
+            <img src="pictures/FeGLogo.svg">
+        </div>
+        <div class="col-8">
+            <p class="h1">FeG Übersetzung</p>
+            <p class="h2">Anmeldung und starten der Service-App</p>
+        </div>
+    </div>
+    <div class="mt-5 row border border-success border-2 bg-success bg-opacity-50 m-3 rounded">
+        <div class="col-7">
+            <h2 class="mt-2">W-LAN-Zugang:</h2>
+            <h5>Scannen Sie den Code für den W-LAN-Zugang, oder melden Sie sich an folgendem W-LAN an:</h5>
+            <h5></h5>
+
+            <div class="input-group">
+                <span class="input-group-text w-25">W-LAN:</span>
+                <span class="input-group-text w-75">FeG-Net-Gast</span>
             </div>
-            <div class="nine columns">
-                <h2><b>FeG Übersetzung</b> </h2>
-                <h5><b>Anmeldung und starten der Übersetzungs-App</b></h5>
+            <div class="input-group">
+                <span class="input-group-text w-25">Password:</span>
+                <span class="input-group-text w-75">feg-gast</span>
+            </div>
+            <div class="alert alert-success d-flex align-items-center mt-2" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-info-square me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
+                    </path>
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                    </path>
+                </svg>
+                <div>Das W-LAN ist nur Sonntags im Zeitraum <br>von <b>9:00 – 13:00 Uhr</b> aktiv</div>
             </div>
 
         </div>
-    </div>
-
-    <div class="container" style="margin-top: 2cm;">
-        <div class="row">
-            <div class="eight columns">
-                <h2><b>1. W-LAN-Zugang:</b> </h2>
-                <h5>Scannen Sie den Code für den W-LAN-Zugang</h5>
-                <h5>Hinweis: Das W-LAN ist nur Sonntags im Zeitraum <br>von <b>9:00 – 13:00 Uhr</b> aktiv</h5>
-
-                <table>
-                    <tr>
-                        <td>
-                            <h5><b>W-LAN-Name:</b> </h5>
-                        </td>
-                        <td>
-                            <h5>FeG-Net-Gast</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5><b>Passwort:</b></h5>
-                        </td>
-                        <td>
-                            <h5>feg-gast</h5>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="four columns">
-                <img class="u-full-width" src="QR-Codes/WiFi FeG-Net-Guest.png">
-                <h5 style="text-align: center;"><b>WiFi-Access</b></h5>
-            </div>
+        <div class="col-5 text-center">
+            <img class="w-75 m-3" src="QR-Codes/WiFi FeG-Net-Guest.png">
+            <p class="h3">WiFi-Access</p>
         </div>
     </div>
 
-    <div class="container" style="margin-top: 2cm;">
-        <div class="row">
-            <div class="eight columns">
-                <h2><b>2. Übersetzungs-App:</b> </h2>
-                <h5>Scannen Sie den Code um zu der Übersetzungs-App zu gelangen </h5>
-                <h5><b>URL:</b> http://192.168.188.2/interpreter/stations/ </h5>
+    <div class="mt-5 row border border-success border-2 bg-success bg-opacity-50 m-3 rounded">
+        <div class="col-7">
+            <h2 class="mt-2">Übersetzungs-App:</h2>
+            <h5>Scannen Sie den Code oder navigieren Sie im Browser zu folgendem Link um zur Übersetzungs-App zu
+                gelangen:</h5>
+            <div class="input-group">
+                <span class="input-group-text w-25">Website:</span>
+                <span class="input-group-text w-75">http://192.168.188.2/interpreter/stations/</span>
             </div>
-            <div class="four columns">
-                <img class="u-full-width" src="QR-Codes/URL ip InterpreterStations.png">
-                <h5 style="text-align: center;"><b>Interpreter-Service-App</b></h5>
+            <div class="alert alert-success d-flex align-items-center mt-2" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-info-square me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
+                    </path>
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                    </path>
+                </svg>
+
+                <div>Halten Sie ihre Kopfhörer bereit um der Übersetzung folgen zu können</div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+                    <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
+                  </svg>
             </div>
         </div>
+        <div class="col-5 text-center">
+            <img class="w-75 m-3" src="QR-Codes/URL ip InterpreterStations.png">
+            <p class="h3">Service-App</p>
+        </div>
     </div>
-    <script>
-
-    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
