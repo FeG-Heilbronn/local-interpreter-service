@@ -324,9 +324,9 @@ pre > code {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 th,
 td {
-  padding: 12px 15px;
+  padding: 4px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
+   }
 th:first-child,
 td:first-child {
   padding-left: 0; }
@@ -339,12 +339,12 @@ td:last-child {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-  margin-bottom: 1rem; }
+  margin-bottom: 0.2rem; }
 input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 0.3rem; }
 pre,
 blockquote,
 dl,
@@ -354,7 +354,7 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem; }
+  margin-bottom: 0.5rem; }
 
 
 /* Utilities
