@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
 </head>
 
 <body>
@@ -21,18 +20,17 @@
         </div>
     </div>
     <div class="mt-5 row border border-success border-2 bg-success bg-opacity-50 m-3 rounded">
-        <div class="col-7">
+        <div class="col-8">
             <h2 class="mt-2">W-LAN-Zugang:</h2>
-            <h5>Scannen Sie den Code für den W-LAN-Zugang, oder melden Sie sich an folgendem W-LAN an:</h5>
-            <h5></h5>
+            <h5>Scannen Sie den Code für den W-LAN-Zugang oder melden Sie sich an folgendem W-LAN an:</h5>
 
             <div class="input-group">
-                <span class="input-group-text w-25">W-LAN:</span>
-                <span class="input-group-text w-75">FeG-Net-Gast</span>
+                <span class="input-group-text w-25 fs-5">W-LAN:</span>
+                <span class="input-group-text w-75 fs-5 fw-bold" id="WifiName">MyName</span>
             </div>
             <div class="input-group">
-                <span class="input-group-text w-25">Password:</span>
-                <span class="input-group-text w-75">feg-gast</span>
+                <span class="input-group-text w-25 fs-5">Password:</span>
+                <span class="input-group-text w-75 fs-5 fw-bold" id="WifiPassword">MyPassword</span>
             </div>
             <div class="alert alert-success d-flex align-items-center mt-2" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -44,24 +42,27 @@
                         d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
                     </path>
                 </svg>
-                <div>Das W-LAN ist nur Sonntags im Zeitraum <br>von <b>9:00 – 13:00 Uhr</b> aktiv</div>
+                <div>Das W-LAN ist nur Sonntags im Zeitraum <br>von <span class="fw-bold">9:00 – 13:00 Uhr</span> aktiv
+                </div>
             </div>
 
         </div>
-        <div class="col-5 text-center">
-            <img class="w-75 m-3" src="QR-Codes/WiFi FeG-Net-Guest.png">
+        <div class="col-4 text-center">
+            <figure class="figure m-3">
+                <img class="figure-img img-fluid" src="QR-Codes/QrForWiFi.png" alt="Figure image">
+            </figure>
             <p class="h3">WiFi-Access</p>
         </div>
     </div>
 
     <div class="mt-5 row border border-success border-2 bg-success bg-opacity-50 m-3 rounded">
-        <div class="col-7">
+        <div class="col-8">
             <h2 class="mt-2">Übersetzungs-App:</h2>
             <h5>Scannen Sie den Code oder navigieren Sie im Browser zu folgendem Link um zur Übersetzungs-App zu
                 gelangen:</h5>
             <div class="input-group">
-                <span class="input-group-text w-25">Website:</span>
-                <span class="input-group-text w-75">http://192.168.188.2/interpreter/stations/</span>
+                <span class="input-group-text w-25 fs-5">Website:</span>
+                <span class="input-group-text w-75 fs-5" id="ServiceAppUrl">MyServiceAppRoute</span>
             </div>
             <div class="alert alert-success d-flex align-items-center mt-2" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -75,17 +76,40 @@
                 </svg>
 
                 <div>Halten Sie ihre Kopfhörer bereit um der Übersetzung folgen zu können</div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
-                    <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                    class="bi bi-headphones" viewBox="0 0 16 16">
+                    <path
+                        d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z" />
+                </svg>
             </div>
         </div>
-        <div class="col-5 text-center">
-            <img class="w-75 m-3" src="QR-Codes/URL ip InterpreterStations.png">
+        <div class="col-4 text-center">
+            <figure class="figure m-3">
+                <img class="figure-img img-fluid" src="QR-Codes/QrForApp.png" alt="Figure image">
+            </figure>
             <p class="h3">Service-App</p>
         </div>
+
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        function displayContents(contents) {
+            console.log(contents);
+            for (const [key, value] of Object.entries(contents)) {
+                console.log(`Applying '${value}' to variable '${key}'`);
+                const uiElement = document.getElementById(key);
+                uiElement.textContent = value;
+            }
+        }
+
+        fetch("Variables.json")
+            .then(response => {
+                return response.json();
+            })
+            .then(jsondata => {
+                displayContents(jsondata);
+            });
+    </script>
 </body>
 
 </html>
