@@ -8,6 +8,7 @@ Radio broadcast for interpreter so the foreign guests are able to follow the ser
 - Port: 5901
 ### IceCast2
 - Port: 8000
+- Configuration: `/etc/icecast2/icecast.xml`
 ### NginX
 - Port: 80 / 443
 - Config-File: `etc/nginx/nginx.conf`

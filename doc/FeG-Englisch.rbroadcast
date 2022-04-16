@@ -16,7 +16,7 @@
             "hostname": "192.168.188.2",
             "mountpoint": "/germanInterpreter",
             "networkadapter": 0,
-            "password": "undifugo",
+            "password": "******",
             "port": 8000,
             "private": true,
             "protocol": 0,
