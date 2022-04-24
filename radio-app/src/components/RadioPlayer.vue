@@ -1,42 +1,42 @@
 <template>
   <div class="row justify-content-center">
-      <div class="row col-auto player-controls">
+    <div class="row col-auto player-controls">
       <audio class="visually-hidden" ref="stream">
-        <source :src="source" type="audio/mpeg"/>
+        <source :src="source" :type="codec" />
       </audio>
-        <button 
-          name="play-pause"
-          class="col-auto button play-pause-button"
-          @click="onPlayPause"
-        >
-          <i :class="playPauseSymbol"></i>
-        </button>
-        <div class="col-auto">
-          <div class="current-language">
-            <span> {{ language }} </span>
-          </div>
-          <div class="volume-controls">
-            <input
-              class="volume"
-              type="range"
-              name="volume"
-              min="0"
-              max="1"
-              step="0.05"
-              :value="volume"
-              @input="newVolumeSet"
-              ref="volumeSet"
-            />
-          </div>
+      <button
+        name="play-pause"
+        class="col-auto button play-pause-button"
+        @click="onPlayPause"
+      >
+        <i :class="playPauseSymbol"></i>
+      </button>
+      <div class="col-auto">
+        <div class="current-language">
+          <span> {{ language }} </span>
         </div>
-        <button
-              name="mute"
-              class="col-auto button mute-button"
-              @click="onMuteUnmute"
-            >
-              <i :class="muteUnmuteSymbol"></i>
-            </button>
+        <div class="volume-controls">
+          <input
+            class="volume"
+            type="range"
+            name="volume"
+            min="0"
+            max="1"
+            step="0.05"
+            :value="volume"
+            @input="newVolumeSet"
+            ref="volumeSet"
+          />
+        </div>
       </div>
+      <button
+        name="mute"
+        class="col-auto button mute-button"
+        @click="onMuteUnmute"
+      >
+        <i :class="muteUnmuteSymbol"></i>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -49,6 +49,10 @@ export default {
       require: true,
     },
     language: {
+      type: String,
+      require: true,
+    },
+    codec: {
       type: String,
       require: true,
     },

@@ -10,10 +10,11 @@ class EasyHttpClient {
 }
 
 class RadioStation {
-    constructor(name, language, url) {
+    constructor(name, language, url, codec) {
         this.endpoint = name;
         this.name = language;
         this.route = url;
+        this.codec = codec;
     }
 }
 
@@ -24,13 +25,13 @@ const stationControl = (function () {
         <h3>Keine Station gefunden </h3>
         <h5>Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut</h5>
     </div>`;
-    function CreateStation(id, language, url) {
+    function CreateStation(id, language, url, codec) {
         id = id.replace(/\s+/gm,'');
         return `
         <div class="row player-controls">
             <h3>${language}</h3>
             <audio id="${id}" controls="" preload="none" controlsList="nodownload">
-                <source src="${url}" type="audio/mpeg">
+                <source src="${url}" type="${codec}">
             </audio>
         </div>`;
     }
@@ -43,7 +44,7 @@ const stationControl = (function () {
     function setUpView(stations) {
         stations.forEach((station) => {
             const child = document.createElement("div");
-            child.innerHTML = CreateStation(station.endpoint, station.name, station.route);
+            child.innerHTML = CreateStation(station.endpoint, station.name, station.route, station.codec);
             stationsContainer.appendChild(child)
         })
     }
@@ -57,7 +58,7 @@ const stationControl = (function () {
                 name = `${station.server_name} : ${station.title}`;
 
             const url = station.listenurl.replace(hostMatcher, RadioBase);
-            const interpreter = new RadioStation(station.server_name, name, url);
+            const interpreter = new RadioStation(station.server_name, name, url, station.server_type);
             stations.push(interpreter);
         }
 
