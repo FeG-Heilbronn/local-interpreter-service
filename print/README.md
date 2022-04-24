@@ -11,7 +11,7 @@ The form imports following resources which have to be replaced
 - `./QR-Codes/QrForApp.png`
 - `./QR-Codes/QrForWiFi.png`
 ## Output
-After finished you can print dies page as manual or just show the page on an Display.
+After finished you can print this page as manual or just serve the page on a display with open browser.
 
 ## Notes
 All QR-Codes are created with https://www.qrcode-generator.de/solutions/wifi-qr-code/
