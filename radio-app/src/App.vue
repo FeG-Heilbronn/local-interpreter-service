@@ -37,6 +37,15 @@
       <div class="col badge bg-warning text-dark">
         <h3>Keine Station gefunden</h3>
       </div>
+    <button
+      class="btn btn-success"
+      data-bs-target="#collapseTarget"
+      data-bs-toggle="collapse"
+    >
+      Help!
+    </button>
+    <div class="collapse py-2" id="collapseTarget">
+      <HelpPage />
     </div>
   </div>
 </template>
@@ -44,10 +53,12 @@
 <script>
 import RadioPlayer from "./components/RadioPlayer.vue";
 import Radio from "./RadioStation.js";
+import HelpPage from "./components/HelpPage.vue";
 export default {
   name: "App",
   components: {
     RadioPlayer,
+    HelpPage,
   },
   mounted() {
     Radio.mutations.queryStations();
