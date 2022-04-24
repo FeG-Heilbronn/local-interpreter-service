@@ -1,0 +1,30 @@
+{
+    "dsp": [
+    ],
+    "streams": [
+        {
+            "audioencoder": {
+                "bitrate": 128,
+                "channels": 2,
+                "codec": "MP3",
+                "name": "MP3 (128 kbps)",
+                "pro": 0,
+                "samplerate": 44100
+            },
+            "description": "",
+            "genre": "",
+            "hostname": "192.168.178.4",                    // <- IP
+            "mountpoint": "/germanInterpreter",             // <- mount-point
+            "networkadapter": 0,
+            "password": "***",                              // <- password
+            "port": 8000,
+            "private": true,
+            "protocol": 0,
+            "servername": "FeG - LANGUAGE",                 // <- server-Name
+            "stationartwork": "",
+            "streamid": 1,
+            "url": "",
+            "username": "source"
+        }
+    ]
+}
