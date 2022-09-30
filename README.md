@@ -17,6 +17,12 @@ by qr-code
 
 ![Radio-App](./radio-app/doc/Radio-App-View.png)
 
+## Used Software:
+- Icecast2: As Web-Radio-Service
+- nginx: As Webserver
+- Rocket-Broadcaster: As Radio Broadcast via Windows PC and Headset
+- CoolMic (Smartphone App): As Radio Broadcast via Smartphone
+- UniFi: For managing Ubiquity access-points
 
 ## Running Services:
 ### SSH 
@@ -37,7 +43,6 @@ by qr-code
     - accessible with `FeG-Server.local` in LAN
     - or with `FeG-Server.fritz.box`
 - Radio-Stations `<ip|domain>/interpreter/stations/`
-
 
 # ToDo:
 There is still plenty to do with this ...

@@ -47,7 +47,7 @@ correspondent play button
 The next three pictures show as an example how a active broadcast is displayed 
 in the Icecast status view and in the radio-app view:
 
-![Braadcast-App](/doc/Broadcaster-App.png)
+![Braadcast-App](doc/Broadcaster-App.png)
 
 ![Icecast2-Status-Page](doc/Icecast2-Status-Page.png)
 
